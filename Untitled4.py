@@ -28,7 +28,7 @@ with DAG(
         description = 'first dag for BD training',
         start_date=datetime(2022, 12, 22, 10, 15),
         schedule= "* * * * *",
-        catchup = False
+        catchup = False,
              task1 = BashOperator(
         task_id = "task1",
         bash_command= f'echo hello from Airflow {datetime.now()} >> /home/hadoop/airflow/apacheAirflow',
