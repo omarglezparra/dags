@@ -29,12 +29,24 @@ with DAG(
         start_date=datetime(2022, 12, 22, 10, 15),
         schedule= "* * * * *",
         catchup = False
-            ) as dag:
-        task1 = BashOperator(
+             task1 = BashOperator(
         task_id = "task1",
-        bash_command = f'echo hello from Airflow {datetime.now()} >> /home/hadoop/apacheAirflowTest1.txt'
-        )
-        task1
+        bash_command= f'echo hello from Airflow {datetime.now()} >> /home/hadoop/airflow/apacheAirflow',
+    )
+
+    task2 = BashOperator(
+        task_id = "task2",
+        bash_command= f'echo secondary Airflow task {datetime.now()} >> /home/hadoop/airflow/apacheAirflow',
+    )
+
+    task3 = BashOperator(
+        task_id = "task3",
+        bash_command= f'echo 3rd Airflow task- {datetime.now()} >> /home/hadoop/airflow/apacheAirflow',
+    )
+
+
+
+task1 >> task2 >> task3
 
 
 # In[ ]:
