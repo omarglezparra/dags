@@ -27,8 +27,8 @@ with DAG(
         default_args = default_args,
         description = 'first dag for BD training',
         start_date = datetime(2022,12,22,19,15),
-        schedule = "* * * *",
-        catchup = False,
+        schedule = None,
+        catchup = False
             ) as dag:
         task1 = BashOperator(
         task_id = "task1",
