@@ -31,8 +31,8 @@ with DAG(
         catchup = False,
             ) as dag:
         task1 = BashOperator(
-            task_id = "task1",
-            bash_command = f'echo hello from Airflow {datetime.now()} >> /home/hadoop/apacheAirflowTest1.txt'
+        task_id = "task1",
+        bash_command = f'echo hello from Airflow {datetime.now()} >> /home/hadoop/apacheAirflowTest1.txt'
         )
         task1
 
