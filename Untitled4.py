@@ -43,6 +43,7 @@ with DAG(
         task_id = "task3",
         bash_command= f'echo 3rd Airflow task- {datetime.now()} >> /home/hadoop/airflow/apacheAirflow',
     )
+    )
 
 
 
